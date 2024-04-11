@@ -1,7 +1,5 @@
-// @ts-nocheck
-
 export function getEvenNumber() {
-  return
+  return [1, 2]
 }
 
 console.log(getEvenNumber([1, 2, 3, 4, 5, 6]))

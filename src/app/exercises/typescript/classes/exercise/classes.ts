@@ -1,18 +1,18 @@
 // @ts-nocheck
 class Animal {
   name: string
-
-  constructor(name: any) {
+  age: number
+  constructor(name: string) {
     this.name = name
   }
 
-  move(distance: any) {
+  move(distance: number) {
     console.log('Moved ' + distance + ' meters')
   }
 }
 
 class Dog extends Animal {
-  constructor(name: any) {
+  constructor(name: string) {
     super(name)
   }
 
@@ -39,30 +39,30 @@ class ClassWithPrivateMethodsAndProperties {
 }
 
 class ImprovedConstructorAssignment {
-  constructor(public name: any) {}
+  constructor(public name: string) {}
 
-  move(distance: any) {
+  move(distance: number) {
     console.log('Moved ' + distance + ' meters')
   }
 }
 
 class ReadonlyClass {
   constructor(
-    public readonly name: any,
-    private readonly foo: any,
-    private readonly person: any,
+    public readonly name: string,
+    private readonly foo: string,
+    private readonly person: Animal,
   ) {}
 
-  bar(): any {
+  bar(): string {
     this.person.age = 43
     return this.name + this.foo
   }
 }
 
 abstract class CostCalculator {
-  abstract billingCost(): any
+  abstract billingCost(): number
 
-  calculateCost(baseCost: any) {
+  calculateCost(baseCost: number) {
     const total = baseCost + this.productionCost() + this.logisticsCost() + this.marketingCost() + this.billingCost()
     return total
   }
@@ -81,13 +81,13 @@ abstract class CostCalculator {
 }
 
 class SpainCostCalculator extends CostCalculator {
-  override billingCost(): any {
+  override billingCost(): number {
     return 21
   }
 }
 
 class FranceCostCalculator extends CostCalculator {
-  override billingCost(): any {
+  override billingCost(): number {
     return 21
   }
 }

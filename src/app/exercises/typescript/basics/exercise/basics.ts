@@ -1,4 +1,4 @@
-// @ts-nocheck
+// // @ts-nocheck
 const foo: any = 'foo'
 const bar: any = 1
 const baz: any = true
