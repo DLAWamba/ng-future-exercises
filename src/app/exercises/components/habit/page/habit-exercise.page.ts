@@ -4,6 +4,11 @@ import { HabitSolutionComponent } from '../_solution/habit.component'
 import { HabitComponent } from '../habit.component'
 import { MdComponent } from '../../../../dashboard/delivery/components/markdown/markdown.component'
 
+export class Habit {
+  description: string = 'habit1'
+  completed: boolean = true
+}
+
 @Component({
   selector: 'app-habit-exercise',
   standalone: true,
@@ -11,9 +16,13 @@ import { MdComponent } from '../../../../dashboard/delivery/components/markdown/
     <app-solution-component>
       <app-markdown statement src="assets/app/exercises/components/habit/README.md" />
       <app-habit-solution solution habit="Meditar" />
-      <app-habit user-solution name="Cagar" />
+      <app-habit habit-component [habit]="getHabit()" />
     </app-solution-component>
   `,
   imports: [SolutionComponent, HabitSolutionComponent, HabitComponent, MdComponent],
 })
-export class EventExercisePage {}
+export class EventExercisePage {
+  getHabit(): Habit {
+    return { description: 'habito1', completed: false }
+  }
+}
