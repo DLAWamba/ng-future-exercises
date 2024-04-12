@@ -4,13 +4,14 @@
 <p class="style-base" [class]="getColorClass()">{{getDescription()}}</p>
 <!-- 
     Las clases hacen referencia a clases css
-    Por lo general, la nomenclatura de las clases es con - (clase-1)
+    Por lo general, la nomenclatura de las clases es con - : clase-1
     Para referenciar las clases del css dentro del ts, se ponen entre comillas simples 'clase-1'
-    y asi podemos diferenciat entre clases de typescript y clases del css
+    y asi podemos diferenciar facilmente entre clases de typescript y clases del css
 
     Se puede asignar una clase no dinamica, class="clase" y luego añadir las clases dinamicas con [class]=
     
-    La parte dinamica se puede asignar de varias y formas, y puede tener mas de una clase asignada
+    La parte dinamica se puede asignar de varias formas, y puede tener mas de una clase asignada
+    
     opcion 1: la funcion devuelve directamente la clase que se quiere
     opcion 2: la funcion asigna una clase en base a un boolean: [class.clase-1] = true/false
     opcion 3: devuelve una lista de clases y un boolean para cada una como si fuera un json [clase-1: true, clase-2:false, ...]

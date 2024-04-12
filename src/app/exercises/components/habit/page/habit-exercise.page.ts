@@ -4,9 +4,18 @@ import { HabitSolutionComponent } from '../_solution/habit.component'
 import { HabitComponent } from '../habit.component'
 import { MdComponent } from '../../../../dashboard/delivery/components/markdown/markdown.component'
 
-export class Habit {
+// Definimos aqui la interfaz/clase habit, pero lo ideal seria definirlo en un fichero aparte, incluso dentro de una carpeta con todas las interfaces comunes
+// Debemos importarla en HabitComponent
+
+// Podemos definirla como clase o como intefaz, en este caso tiene mas sentido como intefaz porque no tiene metodos
+export class HabitClass {
   description: string = ''
   completed: boolean = false
+}
+
+export interface Habit {
+  description: string
+  completed: boolean
 }
 
 @Component({
@@ -16,6 +25,7 @@ export class Habit {
     <app-solution-component>
       <app-markdown statement src="assets/app/exercises/components/habit/README.md" />
       <app-habit-solution solution habit="Meditar" />
+      <!-- ref1 -->
       <app-habit user-solution [habit]="getHabit()" [name]="'Pescar'" />
     </app-solution-component>
   `,
@@ -26,3 +36,33 @@ export class EventExercisePage {
     return { description: 'Ir a pescar al rio', completed: false }
   }
 }
+
+/* ref1
+Aqui colocamos los componentes usando el template, lo ideal seria usar el templateUrl y ponerlo en un html
+
+<app-habit user-solution [habit]="getHabit()" [name]="'Pescar'" />
+
+Los componentes se referncian por su selector, app-habit en este caso:
+<app-habit
+
+despues se pasa (no se que es):
+user-solution
+
+finalmente se pasan los parametros del componente entre corchetes [parametro]
+[habit]="getHabit()" [name]="'Pescar'"
+Estos parametros estan definidos como input() en la clase del componente
+
+Podemos pasar los parametros de forma estatica, como en [name] = "'pescar'"
+o de forma dinamica, como en [habit] = "getHabit()"
+
+En cualquier caso, lo que hay que entender es que lo que va entre comillas es codigo .ts, no literales,
+para poner literales hay que ponerlos entre comillas simples dentro de las comillas dobles.
+
+[parametro] = "codigo typescript"
+
+Este codigo typescript puede usar funciones definidas dentro de la clase del componente
+
+
+
+
+*/

@@ -1,16 +1,22 @@
 import { Component, input } from '@angular/core'
+// Importamos las clases, intefaces que necesitamos
 import { Habit } from './page/habit-exercise.page'
 
 @Component({
-  selector: 'app-habit',
-  styleUrl: './habit.component.css',
-  templateUrl: './habit.component.html',
+  selector: 'app-habit', // El selector es el nombre html del componente
+  styleUrl: './habit.component.css', // La direccion del archivo css
+  templateUrl: './habit.component.html', // La direccion del archivo html
   standalone: true,
-  imports: [],
+  imports: [], // Aqui se especifica que componentes necesita,
 })
+// Aqui se crea el codigo del componente, el nombre de la clase es el nombre del componente, no confundir con el selector, que es el nombre html
 export class HabitComponent {
+  // Estos son los parametros del constructor de la clase
+  // Se difrencian porque llevan input<tipo>(), TS automaticamente los considera como parametros del constructor y deben ser rellenado al usar el componente
   name = input<string>('Unknown')
   habit = input.required<Habit>()
+
+  // Funciones invocables del componente
 
   getDescription() {
     return this.habit().description
