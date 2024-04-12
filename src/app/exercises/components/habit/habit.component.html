@@ -1,7 +1,9 @@
-<h1 title="tooltiptext" class="style-title">{{name()}}</h1>
-<p class="style-base" [class]="getClass()">{{getDescription()}}</p>
-<p class="style-base" [class.style-complete]="isCompleted()">{{getDescription()}}</p>
-<p class="style-base" [class]="getColorClass()">{{getDescription()}}</p>
+<div class="style-border">
+    <h1 title="tooltiptext" class="style-title">{{name()}}</h1>
+    <p class="style-base" [class]="getClass()">{{getDescription()}}</p>
+    <p class="style-base" [class.style-complete]="isCompleted()">{{getDescription()}}</p>
+    <p class="style-base" [class]="getColorClass()">{{getDescription()}}</p>
+</div>
 <!-- 
     Las clases hacen referencia a clases css
     Por lo general, la nomenclatura de las clases es con - : clase-1

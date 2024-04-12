@@ -45,8 +45,10 @@ Aqui colocamos los componentes usando el template, lo ideal seria usar el templa
 Los componentes se referncian por su selector, app-habit en este caso:
 <app-habit
 
-despues se pasa (no se que es):
-user-solution
+despues se pasa un atributo "user-solution". 
+Estos atributos seran utiles mas adelante para saber donde colocar el componente
+En este caso, significa que que este componente se va a colocar en la zona de user-solution del padre
+
 
 finalmente se pasan los parametros del componente entre corchetes [parametro]
 [habit]="getHabit()" [name]="'Pescar'"

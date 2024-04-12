@@ -1,0 +1,8 @@
+<ul class="habits-list">
+    @for (habit of habits; track habit) {
+        <!-- <li class="habit-wrapper">{{habit}}</li> -->
+        <li>
+            <app-habit [habit]="{description:'descripcion', completed:false}" [name]="habit"/>
+        </li>
+    }
+</ul>
