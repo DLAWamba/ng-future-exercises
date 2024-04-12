@@ -1,11 +1,23 @@
-.title {
+.style-title {
   color: var(--primary-color);
 }
 
-.base {
+.style-base {
+  color: black;
+}
+
+.style-pending {
   color: red;
 }
 
-.completed {
+.style-complete {
   color: green;
+}
+
+.style-highlight {
+  background-color: yellow;
+}
+
+.style-red {
+  color: red;
 }
