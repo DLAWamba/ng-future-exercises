@@ -1,0 +1,16 @@
+
+<form [formGroup]="habitsForm" (ngSubmit)="submit()">
+    <label>
+        Nombre de Habito Nuevo
+        <input type="text" formControlName="textBox1" />
+    </label>
+    @if(message !== ''){
+        <p>{{message}}</p>
+    }
+    <button type="submit">Crear</button>
+    <ul>
+        <li>
+            
+        </li>
+    </ul>
+</form>
