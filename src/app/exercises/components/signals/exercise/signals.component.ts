@@ -8,7 +8,7 @@ import { Component, signal } from '@angular/core'
   imports: [],
 })
 export class SignalsComponent {
-  valor: number = signal<number>(0)
+  valor = signal(0)
 
   set(val: number) {
     this.valor.set(val)
