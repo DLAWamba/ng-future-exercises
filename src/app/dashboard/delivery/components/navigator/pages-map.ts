@@ -51,7 +51,7 @@ export const pagesMap: { [key: string]: PageNode } = {
   },
   'reactive-forms': {
     prev: 'pipes',
-    next: 'content-projection',
+    next: 'router',
     link: 'reactive-forms',
     title: 'Formularios Reactivos.',
   },
@@ -62,25 +62,31 @@ export const pagesMap: { [key: string]: PageNode } = {
     title: 'Router',
   },
   'http-client': {
-    prev: 'reactive-forms',
+    prev: 'router',
     next: 'content-projection',
     link: 'http-client',
     title: 'Http Client',
   },
   'content-projection': {
-    prev: 'reactive-forms',
+    prev: 'http-client',
     next: 'content-projection-multi',
     link: 'content-projection',
     title: 'Content Projection (ng-content)',
   },
   'content-projection-multi': {
     prev: 'content-projection',
-    next: 'output',
+    next: 'defer',
     link: 'content-projection-multi',
     title: 'Multi-Slot Content Projection',
   },
-  output: {
+  defer: {
     prev: 'content-projection-multi',
+    next: 'output',
+    link: 'defer',
+    title: 'Deferrable views',
+  },
+  output: {
+    prev: 'defer',
     next: 'signals',
     link: 'output',
     title: 'Output',
@@ -99,14 +105,26 @@ export const pagesMap: { [key: string]: PageNode } = {
   },
   'signals-effect': {
     prev: 'signals-computed',
-    next: 'custom-properties',
+    next: 'signals-todo',
     link: 'signals-effect',
     title: 'Signals Effect',
   },
+  'signals-todo': {
+    prev: 'signals-effect',
+    next: 'custom-properties',
+    link: 'signals-todo',
+    title: 'Signals Todo',
+  },
   'custom-properties': {
-    prev: 'signals-computed',
-    next: null,
+    prev: 'signals-todo',
+    next: 'services',
     link: 'custom-properties',
-    title: 'Custom Properties.',
+    title: 'Custom Properties',
+  },
+  services: {
+    prev: 'custom-properties',
+    next: null,
+    link: 'services',
+    title: 'Services & InjectionToken',
   },
 }
