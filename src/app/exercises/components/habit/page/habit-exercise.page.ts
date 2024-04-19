@@ -23,7 +23,7 @@ export interface Habit {
   standalone: true,
   template: `
     <app-solution-component>
-      <app-markdown statement src="assets/app/exercises/components/habit/README.md" />
+      <app-markdown src="assets/app/exercises/components/habit/README.md" />
       <app-habit-solution solution habit="Meditar" />
       <!-- ref1 -->
       <app-habit user-solution [habit]="getHabit()" [name]="'Pescar'" />
